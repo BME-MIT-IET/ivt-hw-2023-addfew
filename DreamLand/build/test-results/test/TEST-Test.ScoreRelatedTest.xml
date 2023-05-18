@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test.ScoreRelatedTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-05-18T19:54:12" hostname="ASHIQ-PC" time="0.006">
+  <properties/>
+  <testcase name="testHighScore" classname="Test.ScoreRelatedTest" time="0.006"/>
+  <system-out><![CDATA[125
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
