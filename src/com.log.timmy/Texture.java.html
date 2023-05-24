@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>Texture.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">Test (May 25, 2023 12:06:34 AM)</a> &gt; <a href="../../index.html" class="el_group">DreamLand</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">com.log.timmy</a> &gt; <span class="el_source">Texture.java</span></div><h1>Texture.java</h1><pre class="source lang-java linenums">package com.log.timmy;
+
+import java.awt.image.BufferedImage;
+
+public class Texture {
+//different objects being intialized
+	Sprites pars, ps, ts, es;
+	
+<span class="nc" id="L9">	private BufferedImage Particle_s = null;</span>
+<span class="nc" id="L10">	private BufferedImage Player_s = null;</span>
+<span class="nc" id="L11">	private BufferedImage Trap_s = null;</span>
+<span class="nc" id="L12">	private BufferedImage Enemy_s = null;</span>
+	
+	
+<span class="nc" id="L15">	public BufferedImage[] num = new BufferedImage[4];</span>
+<span class="nc" id="L16">	public BufferedImage[] num2 = new BufferedImage[2];</span>
+<span class="nc" id="L17">	public BufferedImage[] num3 = new BufferedImage[2];</span>
+<span class="nc" id="L18">	public BufferedImage[] num4 = new BufferedImage[2];</span>
+<span class="nc" id="L19">	public Texture() {</span>
+		
+<span class="nc" id="L21">		ImageLoader load = new ImageLoader();</span>
+		// loads certain image from following file location.
+<span class="nc" id="L23">		Particle_s = load.Loader(&quot;/sprite.png&quot;);</span>
+<span class="nc" id="L24">		Player_s = load.Loader(&quot;/Tom.png&quot;);</span>
+<span class="nc" id="L25">		Trap_s= load.Loader(&quot;/trapMon.png&quot;);</span>
+<span class="nc" id="L26">		Enemy_s= load.Loader(&quot;/monsterr.png&quot;);</span>
+		
+		
+		// returns subimage of following images
+<span class="nc" id="L30">		pars= new Sprites(Particle_s);</span>
+<span class="nc" id="L31">		ps = new Sprites(Player_s);</span>
+<span class="nc" id="L32">		ts = new Sprites(Trap_s);</span>
+<span class="nc" id="L33">		es = new Sprites(Enemy_s);</span>
+<span class="nc" id="L34">		getTexture();</span>
+<span class="nc" id="L35">	}</span>
+	void getTexture() {
+		
+		//return image with certain width and height at certain row and coloumn
+<span class="nc" id="L39">		num[0]= pars.getImage(1,1,40,40);</span>
+<span class="nc" id="L40">		num2[0]= ps.getImage(1, 1, 40, 58);</span>
+		
+<span class="nc" id="L42">		num3[0]=es.getImage(1, 1, 40, 60);</span>
+<span class="nc" id="L43">		num4[0]=ts.getImage(1, 1, 40, 60);</span>
+		
+		
+<span class="nc" id="L46">	}</span>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span>Test (May 25, 2023 12:06:34 AM)</div></body></html>

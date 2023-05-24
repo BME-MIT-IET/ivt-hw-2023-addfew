@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test.ObjectCollisionMovementTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2023-05-18T19:54:12" hostname="ASHIQ-PC" time="0.031">
+  <properties/>
+  <testcase name="PlayerCollisionWithBAEnemytest" classname="Test.ObjectCollisionMovementTest" time="0.028"/>
+  <testcase name="PlayerCollisionWithTraptest" classname="Test.ObjectCollisionMovementTest" time="0.001"/>
+  <testcase name="TrapMonsterMovementtest" classname="Test.ObjectCollisionMovementTest" time="0.002"/>
+  <testcase name="BasicEnemyMovingtest" classname="Test.ObjectCollisionMovementTest" time="0.0"/>
+  <system-out><![CDATA[position of Trapmon as compared to its intial Position 299
+Position of Basic Enemy as compared to its original Position 101
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

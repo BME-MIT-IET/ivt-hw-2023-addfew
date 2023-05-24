@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>BaEnemy.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">Test (May 25, 2023 12:06:34 AM)</a> &gt; <a href="../../index.html" class="el_group">DreamLand</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">com.log.timmy</a> &gt; <span class="el_source">BaEnemy.java</span></div><h1>BaEnemy.java</h1><pre class="source lang-java linenums">package com.log.timmy;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Rectangle;
+import java.io.Serializable;
+import java.util.LinkedList;
+// simple movement enemy: one of child class of entity
+public class BaEnemy extends Entity  {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+<span class="fc" id="L15">	private float gravity =0.50f;</span>
+<span class="fc" id="L16">    private float  vy=0, vx=1f;</span>
+<span class="fc" id="L17">	private int w=40, h=60;</span>
+<span class="fc" id="L18">	Texture t = Game.getInst();</span>
+	
+	private MultiObjects mb;
+	
+	 public BaEnemy(float x, float y, int width, int height, MultiObjects mb, Identity ID) {
+<span class="fc" id="L23">		super(x, y, width, height, ID);</span>
+<span class="fc" id="L24">		this.mb = mb;</span>
+<span class="fc" id="L25">	}</span>
+
+
+	public void update(LinkedList&lt;Entity&gt; entity) {
+	
+		
+			
+<span class="fc" id="L32">			setX(getX() + vx);</span>
+		
+		
+<span class="fc" id="L35">		Collision(entity);</span>
+<span class="fc" id="L36">	}</span>
+
+
+	public void render(Graphics g) {
+	
+<span class="nc" id="L41">		g.drawImage(t.num3[0], (int)getX(),(int)getY(),null);</span>
+		///function used in prototype before using texture above
+		
+		/*g.setColor(Color.PINK);
+		g.fillRect((int)x,(int) y, w, h);
+		Graphics2D g2d = (Graphics2D)g;
+		g.setColor(Color.BLACK);
+		g2d.draw(getBounds());
+		g2d.draw(getrightBounds());
+		*/
+		
+		
+<span class="nc" id="L53">	}</span>
+	public void Collision (LinkedList&lt;Entity&gt; entity) {
+		//collison algorithm: refer to documentation for better understanding:
+		//Using rectangle body for different entities and determining if any of the rectangle intersected other rectangle resulting in following function
+<span class="fc bfc" id="L57" title="All 2 branches covered.">		for (int i=0; i&lt;mb.entity.size(); i++) {</span>
+<span class="fc" id="L58">			Entity temp = mb.entity.get(i);</span>
+			
+<span class="pc bpc" id="L60" title="1 of 2 branches missed.">			if (temp.GetID()==Identity.PARTICLE) {</span>
+<span class="nc bnc" id="L61" title="All 2 branches missed.">				if (getBounds().intersects(temp.getBounds())) {</span>
+				//accelerating and deaccelerating the object: if left rectangle hits particles it will start accelerating in opp. direction
+				
+<span class="nc" id="L64">				vx=-3;</span>
+			}
+<span class="nc bnc" id="L66" title="All 2 branches missed.">	if (getrightBounds().intersects(temp.getBounds())) {</span>
+				//vice versa as above	
+<span class="nc" id="L68">					vx=3;</span>
+				}
+			
+
+
+			
+			}
+			
+				
+				
+				
+				
+			
+			
+			
+	
+		}
+<span class="fc" id="L85">	}</span>
+	
+	
+
+
+
+
+	private Rectangle getrightBounds() {
+<span class="nc" id="L93">		return new Rectangle ((int)getX(),(int) getY(), (int) w-14, h);</span>
+	}
+
+
+	
+	
+
+
+	@Override
+	public Rectangle getBounds() {
+<span class="fc" id="L103">		return new Rectangle ((int)getX()+12,(int) getY(), w-14, h);</span>
+	
+	}
+	}
+
+
+	
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span>Test (May 25, 2023 12:06:34 AM)</div></body></html>

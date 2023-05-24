@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>Particle.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">Test (May 25, 2023 12:06:34 AM)</a> &gt; <a href="../../index.html" class="el_group">DreamLand</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">com.log.timmy</a> &gt; <span class="el_source">Particle.java</span></div><h1>Particle.java</h1><pre class="source lang-java linenums">package com.log.timmy;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Rectangle;
+import java.io.Serializable;
+import java.util.LinkedList;
+//block class making the world child of entity
+public class Particle extends Entity  {
+/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+<span class="nc" id="L14">private int w =40, h=40;</span>
+<span class="nc" id="L15">Texture t = Game.getInst();</span>
+
+	public Particle(float x, float y, int w, int h, Identity ID) {
+<span class="nc" id="L18">		super(x, y, w, h, ID);</span>
+		
+<span class="nc" id="L20">	}</span>
+
+	
+	public void update(LinkedList&lt;Entity&gt; entity) {
+		
+		
+<span class="nc" id="L26">	}</span>
+
+	
+	public void render(Graphics g) {
+<span class="nc" id="L30">		g.drawImage(t.num[0], (int)getX(),(int)getY(),null);</span>
+		//g.setColor(Color.WHITE);
+		//g.drawRect((int)x,(int) y, w, h);
+<span class="nc" id="L33">	}</span>
+
+
+	public  Rectangle getBounds() {
+<span class="nc" id="L37">		return new Rectangle ((int)getX(),(int) getY(), w, h);</span>
+	}
+
+
+
+	
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span>Test (May 25, 2023 12:06:34 AM)</div></body></html>
