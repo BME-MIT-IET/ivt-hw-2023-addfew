@@ -1,0 +1,7 @@
+The controls to the Game are fairly simple:
+
+1. WASD keys are used to move around instead of arrow keys.
+2. Space bar is used to jump.
+3. Clicking Spacebar rapidly will make player fly for some time.
+4. Colliding with monster will result in game over.
+5. Clicking on highscore will let you see all time highscore. 
