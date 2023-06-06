@@ -38,5 +38,3 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build --continue -x test
 
-      - name: Finalize Gradle build
-        run: ./gradlew finalizeBuild
