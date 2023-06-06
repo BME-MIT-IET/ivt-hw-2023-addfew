@@ -32,10 +32,11 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x gradlew
 
+      - name: Set Gradle User Home
+        run: echo "export GRADLE_USER_HOME=${{ github.workspace }}/.gradle" >> $GITHUB_ENV
+
       - name: Build with Gradle
         run: ./gradlew build --continue -x test
-        env:
-          GRADLE_USER_HOME: ${{ github.workspace }}/.gradle
 
       - name: Print Gradle Cache Directory
         run: echo $GRADLE_USER_HOME
@@ -48,4 +49,3 @@ jobs:
 
       - name: Finalize Gradle build
         run: ./gradlew finalizeBuild
-
