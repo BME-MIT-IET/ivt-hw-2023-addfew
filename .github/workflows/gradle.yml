@@ -38,14 +38,5 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build --continue -x test
 
-      - name: Print Gradle Cache Directory
-        run: echo $GRADLE_USER_HOME
-
-      - name: Cache Gradle dependencies
-        uses: actions/cache@v2
-        with:
-          path: ${{ env.GRADLE_USER_HOME }}
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
-
       - name: Finalize Gradle build
         run: ./gradlew finalizeBuild
